@@ -32,6 +32,7 @@
         //const modaleTest = document.getElementById('modale1'); // get element by id trova l'elemento attraverso il suo id
         //const modaleTest = document.getElementsByClassName('px-4'); // get element by class name ritorna una lista di elementi che hanno la classe indicata
         //const modaleTest = document.getElementsByTagName('span'); // get element by tag name ritorna una lista di elementi che hanno lo stesso tag che si ha cercato (in questo caso lo span)
+        
         //const modaleTest = document.querySelectorAll('.fixed'); // .nome-classe ritorna una lista di elementi con quella classe
         //const modaleTest = document.querySelectorAll('#modale1'); // #nome-id ritorna una lista di elementi con lo stesso id
         //const modaleTest = document.querySelectorAll('span'); // se cercate un elemento denza il . o # vi ritornerà una lista di elementi in base al tag
@@ -47,7 +48,12 @@
         // aggiungiamo delle classi all'elemento
         titolo.classList.add('ciao', 'mario');
 
-        console.log(titolo);
+        console.log('aggiunta classi', titolo);
+
+        // rimuoviamo le classi dall'elemento
+        titolo.classList.remove('ciao', 'mario');
+
+        console.log('rimozione classi', titolo);
 
         // funzione che viene chiamata dal bottone 'cliccami per cambiare colore' per cambiare il colore del testo dell'h1 titolo.
         function cambiaColore() {
@@ -80,13 +86,13 @@
             modaleUno.classList.add('nascondi');
         }
 
-        // andiamo a create un elemento html (h1) da zero per poi metterlo dentro alla pagina html
+        // andiamo a create un elemento html (h1) da zero per poi metterlo dentro alla pagina html (nome del tag in minuscolo)
         const nuovoH1 = document.createElement('h1');
-        nuovoH1.innerText = 'ciao sono un nuovo titolo';
+        nuovoH1.innerText = 'ciao sono un nuovo titolo'; // .innerHtml invece vi permette di mettere direttamente altro html dentro al vosto h1, tipo: '<p>ciao sono un nuovo titolo</p>'
         nuovoH1.style.color = 'white';
         console.log(nuovoH1);
 
-        document.body.appendChild(nuovoH1);
+        document.body.appendChild(nuovoH1); // aooend child aggiunge l'elemento (h1) appena creato alla pagina html (in questo caso l'aggiunge nel body)
 
         const modaleUno = document.getElementById('modale1');
         //modaleUno.prepend(nuovoH1); // prepend mette l'elemento prima di tutti gli altri (all'interno dell'elemento padre)
@@ -99,7 +105,7 @@
         }
 
         function creaElemento() {
-            const divRosso = document.createElement('div');
+            const divRosso = document.createElement('div'); // <div style="width: 200px; height: 200px; background-color: 'red'; margin: 10px;"></div>
             divRosso.style.width = '200px';
             divRosso.style.height = '200px';
             divRosso.style.backgroundColor = 'red';
