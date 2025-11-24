@@ -12,3 +12,7 @@ def index(request):
     utente_esempio = User.objects.raw('SELECT * FROM app_user WHERE age > 20')
 
     return render(request, 'index.html', {'users': utenti, 'singolo': utente_singolo, 'filtrato': utente_filtrato, 'utenti_raw': utente_esempio})
+
+
+def contact(request):
+    return render(request, 'contact.html')
