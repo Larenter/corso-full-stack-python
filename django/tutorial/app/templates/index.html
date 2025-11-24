@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %} Home Page {% endblock %}
+
+<div>
     ciao
 
     <br>
@@ -14,6 +10,10 @@
     {% for user in users %}
     <div>{{ user }}</div>
     {% endfor %}
+
+    {% if singolo %}
+    <div>{{ singolo }}</div>
+    {% endif %}
 
     <br>
     <br>
@@ -31,5 +31,4 @@
     {% for user in utenti_raw %}
     <div>{{ user }}</div>
     {% endfor %}
-</body>
-</html>
+</div>
